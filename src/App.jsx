@@ -1,12 +1,18 @@
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import './App.css'
+import { theme } from './theme';
+import TopBar from './global/topBar'
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <div className="app">
-        <main className="content"></main>
+        <main className="content">
+          <TopBar/>
+        </main>
       </div>
     </ThemeProvider>
   )
