@@ -10,6 +10,7 @@ export const theme = createTheme({
     },
     boxShadow: "0px 3px 12px 0px #677ad145",
     primary: {
+      400:"#0B234D",
       light: "#C8D2EA",
       contrastText: "#677AD1",
       dark: "#000B1F",
@@ -17,30 +18,23 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ["Roboto", "sans-serif"].join(","),
     fontSize: 12,
     h1: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 40,
     },
     h2: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 32,
     },
     h3: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 24,
     },
     h4: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 20,
     },
     h5: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 16,
     },
     h6: {
-      fontFamily: ["Roboto", "sans-serif"].join(","),
       fontSize: 14,
     },
   },

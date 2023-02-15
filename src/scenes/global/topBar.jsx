@@ -1,4 +1,4 @@
-import { Box, colors, IconButton } from "@mui/material"
+import { Box, IconButton } from "@mui/material"
 import { InputBase } from "@mui/material"
 import { SettingsOutlined } from "@mui/icons-material"
 import { NotificationsOutlined } from "@mui/icons-material"
