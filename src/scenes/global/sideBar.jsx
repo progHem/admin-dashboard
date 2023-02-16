@@ -41,14 +41,13 @@ const SideBar = () => {
                 },
                 ".ps-menu-button": {
                     height: "100%",
-                    textAlign: "center",
                 },
-                ".ps-menuitem-root": {
+                ".ps-menuitem-root:not(:first-of-type)": {
                     padding:"5px 35px 5px 0"
                 },
                 }}>
                 <Menu>
-                    <MenuItem onClick={() => collapseSidebar()} style={{paddingRight:"0"}}>
+                    <MenuItem onClick={() => collapseSidebar()} style={{paddingRight:"17px", textAlign:"center"}}>
                         <img
                             width="100px"
                             height="100px"
@@ -65,6 +64,7 @@ const SideBar = () => {
                             selected={selected}
                             setSelected={setSelected}
                         />
+                        <Typography variant="h6" color={theme.palette.primary[400]} sx={{m: "15px 0 5px 20px"}}>Data</Typography>
                         <Item
                             title="Team"
                             to="/team"
@@ -89,6 +89,7 @@ const SideBar = () => {
                         setSelected={setSelected}
                             
                         />
+                        <Typography variant="h6" color={theme.palette.primary[400]} sx={{m: "15px 0 5px 20px"}}>Pages</Typography>
                         <Item
                             title="Calender"
                             to="/calender"
@@ -105,6 +106,7 @@ const SideBar = () => {
                         setSelected={setSelected}
                             
                         />
+                        <Typography variant="h6" color={theme.palette.primary[400]} sx={{m: "15px 0 5px 20px"}}>Charts</Typography>
                         <Item
                             title="Bar chart"
                             to="/bar"
