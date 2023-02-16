@@ -1,6 +1,6 @@
 import { useState } from "react"
-import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar, sidebarClasses } from 'react-pro-sidebar';
-import { Box, IconButton, Typography, useTheme } from "@mui/material"
+import { Sidebar, Menu, MenuItem, useProSidebar, sidebarClasses } from 'react-pro-sidebar';
+import { Box, Typography, useTheme } from "@mui/material"
 import { Link } from "react-router-dom";
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
@@ -16,7 +16,7 @@ import logo from '../../assets/Logo.svg'
 const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
     return (
-        <MenuItem active={selected == title} style={{ color: selected == title ? theme.palette.primary.light: theme.palette.primary[400] }} onClick={() => setSelected(title)} icon={icon} component={ <Link to={to} />}>{title}
+        <MenuItem active={selected == title} style={{ color: selected == title ? theme.palette.primary[100]: theme.palette.primary[400] }} onClick={() => setSelected(title)} icon={icon} component={ <Link to={to} />}>{title}
         </MenuItem>
     )
 }
@@ -24,11 +24,10 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
 const SideBar = () => {
     const theme = useTheme();
     const { collapseSidebar, collapsed } = useProSidebar();
-    console.log(sidebarClasses);
     const [selected, setSelected] = useState('Dashboard');
     return (
         <Box sx={{
-            backgroundColor: `${theme.palette.primary.dark}`,
+            backgroundColor: `${theme.palette.primary[500]}`,
             [`.${sidebarClasses.root}`]: {
                 border:"none"
             },

@@ -1,4 +1,7 @@
+import Header from "../../components/Header"
 const DashBoard = () => {
-    return <div>DashBoard</div>
+    return (
+        <Header title="Overview" />
+    )
 }
 export default DashBoard

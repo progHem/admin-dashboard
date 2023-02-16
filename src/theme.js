@@ -9,12 +9,28 @@ export const theme = createTheme({
       primary: "#000B1F",
     },
     boxShadow: "0px 3px 12px 0px #677ad145",
+
     primary: {
-      400:"#0B234D",
-      light: "#C8D2EA",
-      contrastText: "#677AD1",
-      dark: "#000B1F",
-      main: "#DDE1EB",
+      100: "#C8D2EA",
+      200: "#DDE1EB",
+      300: "#677AD1",
+      400: "#0B234D",
+      500: "#000B1F",
+
+      600:"#CBD5EA",
+      // light: "#C8D2EA",
+      // contrastText: "#677AD1",
+      // dark: "#000B1F",
+      // main: "#DDE1EB",
+
+      A100: "#9CD5E8", //light green
+      A200: "#00805C", //dark
+
+      A300: "#70A6DE", //blue
+      A400: "#003B86",
+
+      A500: "#E9C3E9", // pink
+      A600: "#B16301",
     },
   },
   typography: {
