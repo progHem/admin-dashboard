@@ -7,6 +7,14 @@ import { theme } from './theme'
 import TopBar from './scenes/global/topBar'
 import DashBoard  from './scenes/dashboard/index'
 import SideBar from './scenes/global/sideBar'
+import Team from './components/team'
+import Calendar from './components/calender'
+import BarChart from './components/barChart'
+import PieChart from './components/pieChart'
+import LineChart from './components/lineChart'
+import GeographyChart from './components/geographyChart'
+import Faq from './components/faq'
+import ProfileForm from './components/profileForm'
 
 function App() {
   return (
@@ -18,6 +26,14 @@ function App() {
           <TopBar />
           <Routes>
             <Route path="/" element={<DashBoard/> } />
+            <Route path="/team" element={<Team/> } />
+            <Route path="/calender" element={<Calendar/> } />
+            <Route path="/profile" element={<ProfileForm/> } />
+            <Route path="/faq" element={<Faq/> } />
+            <Route path="/bar" element={<BarChart/> } />
+            <Route path="/pie" element={<PieChart/> } />
+            <Route path="/line" element={<LineChart/> } />
+            <Route path="/geography" element={<GeographyChart/> } />
           </Routes>
         </main>
       </div>

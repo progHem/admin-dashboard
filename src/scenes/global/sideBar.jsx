@@ -2,7 +2,6 @@ import { useState } from "react"
 import { Sidebar, Menu, MenuItem, SubMenu, useProSidebar, sidebarClasses } from 'react-pro-sidebar';
 import { Box, IconButton, Typography, useTheme } from "@mui/material"
 import { Link } from "react-router-dom";
-import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import { PeopleOutline } from "@mui/icons-material";
@@ -11,23 +10,20 @@ import { BarChartOutlined } from "@mui/icons-material";
 import PieChartOutlineOutlinedIcon from '@mui/icons-material/PieChartOutlineOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MapOutlinedIcon from '@mui/icons-material/MapOutlined';
-import { ContactsOutlined } from "@mui/icons-material";
-import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-import { style } from "@mui/system/Stack/createStack";
+import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined';
 import logo from '../../assets/Logo.svg'
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
     const theme = useTheme();
     return (
-        <MenuItem active={selected == title} style={{ color: theme.palette.primary[400] }} onClick={() => setSelected(title)} icon={icon}>
-            <Typography>{title}</Typography>
-            <Link to={to}/>
+        <MenuItem active={selected == title} style={{ color: selected == title ? theme.palette.primary.light: theme.palette.primary[400] }} onClick={() => setSelected(title)} icon={icon} component={ <Link to={to} />}>{title}
         </MenuItem>
     )
 }
+
 const SideBar = () => {
     const theme = useTheme();
-    const { collapseSidebar, toggleSidebar, collapsed, toggled } = useProSidebar();
+    const { collapseSidebar, collapsed } = useProSidebar();
     console.log(sidebarClasses);
     const [selected, setSelected] = useState('Dashboard');
     return (
@@ -38,38 +34,21 @@ const SideBar = () => {
             },
             [`.${sidebarClasses.container}`]: {
                     backgroundColor: "transparent",
-                },
-        }}>
+                },}}>
             <Sidebar collapse={collapsed} rootStyles={{
                 ".ps-menu-button:hover": {
-                    backgroundColor: "transparent",
+                    backgroundColor: "transparent !important",
                 },
                 ".ps-menu-button": {
                     height: "100%",
                     textAlign: "center",
                 },
-                // ".ps-sidebar-container": {
-                // backgroundColor:`${theme.palette.primary.dark}`
-                // },
-                // "& .pro-icon-wrapper": {
-                //     backgroundColor: "transparent !important"
-                // },
-                // "& .pro-inner-item": {
-                //     padding:"5px 35px 5px 20px !important"
-                // },
-                // "& .pro-inner-item:hover": {
-                //     color: `${theme.palette.primary.light}`
-                // }
-    // [`.${sidebarClasses.container}`]: {
-    //   backgroundColor: `${theme.palette.primary.dark}`,
-    //             },
-    //             [`.${sidebarClasses.container}`]: {
-    //   backgroundColor: `${theme.palette.primary.dark}`,
-    //             },
-                
-  }}>
+                ".ps-menuitem-root": {
+                    padding:"5px 35px 5px 0"
+                },
+                }}>
                 <Menu>
-                    <MenuItem onClick={() => collapseSidebar()}>
+                    <MenuItem onClick={() => collapseSidebar()} style={{paddingRight:"0"}}>
                         <img
                             width="100px"
                             height="100px"
@@ -77,33 +56,83 @@ const SideBar = () => {
                             alt="Logo"
                             style={{ cursor: "pointer" }}
                         />
-                     {!collapsed && (
-                        <Box display="flex" justifyContent="center" alignItems="center">
-                            <Typography variant="h3">Admin</Typography>
-                        </Box>
-                    )}
                     </MenuItem>
                     <Box paddingLeft={collapsed ? undefined : "10%"}>
                         <Item
-                            title="Dahsboard"
+                            title="Dashboard"
                             to="/"
-                            icon={<MenuOutlinedIcon />}
+                            icon={<DashboardOutlinedIcon />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Team"
+                            to="/team"
+                            icon={<PeopleOutline />}
                             selected={selected}
                         setSelected={setSelected}
                             
                         />
-                        <Item
+                        {/* <Item
                             title="Contact"
                             to="/contact"
-                            icon={<ContactsOutlined />}
+                            icon={<Con />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        /> */}
+                        <Item
+                            title="Profile form"
+                            to="/profile"
+                            icon={<PersonOutlinedIcon />}
                             selected={selected}
                         setSelected={setSelected}
                             
                         />
                         <Item
-                            title="Chart"
+                            title="Calender"
+                            to="/calender"
+                            icon={<CalendarTodayOutlined />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        />
+                        <Item
+                            title="FAQ page"
+                            to="/faq"
+                            icon={<HelpOutlinedIcon />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        />
+                        <Item
+                            title="Bar chart"
+                            to="/bar"
+                            icon={<BarChartOutlined />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        />
+                        <Item
+                            title="Pie Chart"
                             to="/pie"
                             icon={<PieChartOutlineOutlinedIcon />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        />
+                        <Item
+                            title="Line Chart"
+                            to="/line"
+                            icon={<TimelineOutlinedIcon />}
+                            selected={selected}
+                        setSelected={setSelected}
+                            
+                        />
+                        <Item
+                            title="Geography Chart"
+                            to="/geography"
+                            icon={<MapOutlinedIcon />}
                             selected={selected}
                         setSelected={setSelected}
                             
